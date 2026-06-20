@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medical Result</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.card {
+    background: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h2 {
+    color: #333;
+}
+
+/* Text */
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* CPT highlight */
+.cpt {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Back button */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2>🧾 Medical Diagnosis Result</h2>
+
+    <p><b>Symptom:</b> {{ symptom }}</p>
+    <p><b>Disease:</b> {{ disease }}</p>
+    <p><b>ICD Code:</b> {{ code }}</p>
+
+    <p class="cpt"><b>CPT Code:</b> {{ cpt }}</p>
+
+    <a href="/">🔙 Back to Home</a>
+
+</div>
+
+</body>
+</html>

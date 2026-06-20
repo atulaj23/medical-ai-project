@@ -1,0 +1,24 @@
+symptom,disease,icd_code,cpt_code
+fever,Viral Fever,A00,N/A
+high fever,Dengue Suspected,A90,N/A
+cough,Common Cold,J00,N/A
+dry cough,Bronchitis,J20,N/A
+headache,Migraine,G43,N/A
+severe headache,Migraine Attack,G43.9,N/A
+chest pain,Angina,R07.9,N/A
+severe chest pain,Heart Disease,R07.2,93000
+shortness of breath,Asthma,J45,N/A
+wheezing,Asthma Attack,J45.9,N/A
+stomach pain,Gastritis,K29,N/A
+vomiting,Food Poisoning,A05,N/A
+diarrhea,Infection,A09,N/A
+fatigue,Anemia,D64,N/A
+joint pain,Arthritis,M19,N/A
+back pain,Lumbar Pain,M54.5,N/A
+skin rash,Allergy,L50,N/A
+itching,Allergic Reaction,L29,N/A
+cold,Upper Respiratory Infection,J06,N/A
+fever cough,Flu Like Illness,J11,N/A
+ecg,ECG Test,Z00.0,93000
+ekg,ECG Test,Z00.0,93000
+heart check,Cardiac Evaluation,Z13.6,93000
