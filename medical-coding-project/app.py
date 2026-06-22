@@ -30,16 +30,12 @@ def home():
 def predict():
     symptom_input = request.form.get('symptom', '').lower().strip()
 
-    # 🔥 MULTI SYMPTOM SUPPORT
     symptoms = [s.strip() for s in symptom_input.split('+')]
 
     all_symptoms = data['symptom'].tolist()
 
     matched_rows = []
 
-    # -------------------------
-    # FUZZY MATCH EACH SYMPTOM
-    # -------------------------
     for sym in symptoms:
         best_match = process.extractOne(sym, all_symptoms)
 
@@ -51,18 +47,13 @@ def predict():
             if not row.empty:
                 matched_rows.append(row.iloc[0])
 
-    # -------------------------
-    # RESULT PROCESSING
-    # -------------------------
     if matched_rows:
-        # take first best match (simple logic)
         result = matched_rows[0]
 
         disease = result['disease']
         icd = result['icd_code']
         cpt = result['cpt_code']
 
-        # clean CPT
         if pd.isna(cpt) or str(cpt).strip() == "":
             cpt = "N/A"
 
@@ -80,7 +71,8 @@ def predict():
     )
 
 # -------------------------
-# RUN SERVER
+# RUN SERVER (FIXED FOR RENDER)
 # -------------------------
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
